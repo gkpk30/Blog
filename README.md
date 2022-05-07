@@ -1,4 +1,4 @@
-# Vite + ReactJs + TailwindCss in JIT Template
+# Vite + ReactJs + TailwindCss using JIT Template
 
 
 
