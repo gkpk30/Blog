@@ -1,3 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Josefin+Sans:wght@100;200;300;400;500&family=Lora:ital,wght@1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,400;0,500;0,700;0,900;1,300&family=Varela&family=Varela+Round&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* CSS rules to specify families
+
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Lora', serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Varela', sans-serif;
+font-family: 'Varela Round', sans-serif; */
+
+
+@layer base {
+    html {
+        /* set global font-family */
+        /* font-family: Josefin Sans,system-ui, sans-serif; */
+      }
+    body {
+        /* @apply font-[Cormorant]; */
+        background-color: #f6f6f4 ;
+        color: #3e3930
+    }
+    li {
+        @apply px-4;
+        @apply cursor-pointer;
+    }
+   /* override the focus ring color */
+    [class*="focus"] {
+        --tw-ring-color: #6B7280 !important
+    }
+}

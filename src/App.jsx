@@ -1,8 +1,18 @@
+import Footer from './component/Footer';
+import TopBar from './component/TopBar'
+import Home from './pages/Home';
+
 const App = () => {
   return (
-    <div className="font-bold text-4xl m-[2em] text-red-600 underline">
-      Hello World
-    </div>
+
+    
+    <>
+    <TopBar />
+    <Home />
+    
+    <Footer className="!font-secondary "/>
+    
+    </>
   );
 };
 
