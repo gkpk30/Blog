@@ -8,12 +8,12 @@ import HeroImg from '../assets/images/eco-friendly-face-min.jpeg'
 
 export default function Header() {
   return (
-    <div className="  mt-20 font-third relative ">
-        <div className=" flex flex-col items-center text-[#444]   ">
-            <div className="  absolute top-[5%] lg:top-5  text-xl">Beauty & Fashion</div>
-            <div className="absolute top-[9%]  lg:top-14  text-8xl ">Blog</div>
+    <div className="  mt-20 font-third  ">
+        <div className=" flex flex-col items-center text-[#444] h-14 relative bg-yellow-800  ">
+            <span className="  absolute top-[0%]  text-xl">Beauty & Fashion</span>
+            <span className="absolute top-[30%]    text-8xl ">Blog</span>
         </div>
-        <img className=" w-full h-5/6 mt-24 object-cover " src={HeroImg} alt="lady eco friendly" />
+        <img className=" w-full h-5/6  object-cover " src={HeroImg} alt="lady eco friendly" />
     </div>
   )
 }
