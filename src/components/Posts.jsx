@@ -1,4 +1,5 @@
-import Post from '../component/Post'
+import Post from '../components/Post'
+import { Link } from "react-router-dom";
 /* This example requires Tailwind CSS v2.0+ */
 
   

@@ -33,3 +33,73 @@ font-family: 'Varela Round', sans-serif; */
         --tw-ring-color: #6B7280 !important
     }
 }
+
+@layer components{
+    .settingsForm > label {
+        font-size: 20px;
+        margin-top: 20px;
+        
+    }
+    .settingsForm > input {
+        color: gray;
+        margin: 10px 0;
+        height: 30px;
+        border: none;
+        border-bottom: 1px solid lightgreen;
+        padding: 1em;
+
+
+    }
+
+    .Login {
+        background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("./assets/images/hairdresser-tools-min.jpeg");
+    }
+
+    .loginform > label {
+        color: gray;
+        /* margin: 5px 0; */
+        height: 30px;
+        border: none;
+        /* border-bottom: 1px solid lightgreen; */
+        /* padding: 1em; */
+    }
+
+    .loginform > input {
+        color: gray;
+        margin: 10px 0;
+        height: 30px;
+        border: none;
+        border-bottom: 1px solid lightgreen;
+        padding: 1em;
+    }
+
+    .Register {
+        background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("./assets/images/hairdresser-tools-min.jpeg");
+    }
+
+    .registerform > label {
+        color: gray;
+        /* margin: 5px 0; */
+        height: 30px;
+        border: none;
+        /* border-bottom: 1px solid lightgreen; */
+        /* padding: 1em; */
+    }
+
+    .registerform > input {
+        color: gray;
+        margin: 10px 0;
+        height: 30px;
+        border: none;
+        border-bottom: 1px solid lightgreen;
+        padding: 1em;
+    }
+}

@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 const posts = [
   {
@@ -57,7 +57,7 @@ const posts = [
     },
   },
   {
-    title: 'Boost your conversion rate',
+    title: 'adfasfsadfsaf',
     href: '#',
     category: { name: 'Article', href: '#' },
     description:
@@ -75,7 +75,7 @@ const posts = [
     },
   },
   {
-    title: 'Boost your conversion rate',
+    title: 'Bodsafion rate',
     href: '#',
     category: { name: 'Article', href: '#' },
     description:

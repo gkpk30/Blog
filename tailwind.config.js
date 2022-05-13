@@ -21,6 +21,10 @@ module.exports = {
         'text': '#7A7A7A',
         'textPrimary': '#444444',
       },
+      backgroundImage: {
+        'login-BgImage': "url('/assets/images/ecological-hair-care-min.jpeg')",
+        
+      }
     },
   },
   variants: {

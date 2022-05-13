@@ -1,7 +1,8 @@
 import React from 'react'
-import Header from '../component/Header'
-import Posts from '../component/Posts'
-import Sidebar from '../component/Sidebar'
+import Header from '../components/Header'
+import Posts from '../components/Posts'
+import Sidebar from '../components/Sidebar'
+import { Link } from "react-router-dom";
 
 
 export default function Home() {
