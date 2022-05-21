@@ -1,8 +1,20 @@
-import React from 'react'
+import axios from "axios"
+import React, {useEffect, useState} from 'react'
 import MyPhoto from '../assets/images/man-suit-gray-min.jpeg'
 import { AiFillFacebook, AiFillInstagram } from 'react-icons/ai';
 
 export default function Sidebar() {
+    const [cat, setCats] = useState([]);
+
+    useEffect(()=>{
+        const getCats = async ()=> {
+            const res = await axios.get("/categories")
+            setCats(res.data)
+        }
+        getCats();
+        console.log(cat)
+    }, [])
+
   return (
    
         <div className="hidden lg:block lg:col-span-3 xl:col-span-2">

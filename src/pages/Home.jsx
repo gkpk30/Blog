@@ -1,11 +1,35 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react' 
 import Header from '../components/Header'
 import Posts from '../components/Posts'
 import Sidebar from '../components/Sidebar'
-import { Link } from "react-router-dom";
+import axios from 'axios';
+
+
 
 
 export default function Home() {
+
+ 
+
+  const [post, setPost] = useState([]);
+
+  useEffect(()=>{
+    const fetchPosts = async ()=> {
+      try{
+        console.log("In Axios")
+        const res = await axios.get("/posts")
+        console.log("response:", res.data);
+      }
+      catch (error) {
+        console.error(error)
+      }
+      
+
+    }
+
+    fetchPosts()
+  }, [])
+
   return (
     <div>
         <Header/>

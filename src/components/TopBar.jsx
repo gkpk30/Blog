@@ -15,7 +15,7 @@ export default function TopBar() {
   const user =  true
 
   return (
-    <Disclosure as="nav" className="bg-background-beige shadow font-primary">
+    <Disclosure as="nav" className="bg-background-beige shadow font-primary topBar">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -102,4 +102,8 @@ font-family: 'Varela Round', sans-serif; */
         border-bottom: 1px solid lightgreen;
         padding: 1em;
     }
+
+    .topBar a:active {
+        color: yellow;
+      } 
 }
