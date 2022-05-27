@@ -1,5 +1,3 @@
-
-
 // import your route components too
 import Footer from './components/Footer';
 import TopBar from './components/TopBar'
@@ -9,11 +7,12 @@ import Register from './pages/Register';
 import Settings from './pages/Settings';
 import Single from './pages/Single';
 import Write from './pages/Write';
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "./context/Context";
 
 const App = () => {
-  const user = true;
+  const { user } = useContext(Context);
   return (
 
     

@@ -2,17 +2,18 @@ import axios from "axios"
 import React, {useEffect, useState} from 'react'
 import MyPhoto from '../assets/images/man-suit-gray-min.jpeg'
 import { AiFillFacebook, AiFillInstagram } from 'react-icons/ai';
+import { Link } from "react-router-dom";
 
 export default function Sidebar() {
-    const [cat, setCats] = useState([]);
+    const [cats, setCats] = useState([]);
 
     useEffect(()=>{
         const getCats = async ()=> {
-            const res = await axios.get("/categories")
+            const res = await axios.get("http://localhost:5000/api/categories")
             setCats(res.data)
         }
         getCats();
-        console.log(cat)
+        
     }, [])
 
   return (
@@ -33,19 +34,14 @@ export default function Sidebar() {
                 </div>
                 <div className="category section">
                     <span className=" border-y-2 py-2 flex justify-center my-4 font-medium text-gray-900">Categories</span>
-                    <ul className="flex  flex-wrap  gap-y-4 ">
-                        <li className="w-1/2 text-center">
-                            Life
-                        </li>
-                        <li className="w-1/2 text-center">
-                            Color
-                        </li>
-                        <li className="w-1/2 text-center">
-                            Music
-                        </li>
-                        <li className="w-1/2 text-center">
-                            Love
-                        </li>
+                    <ul className="flex  flex-wrap  gap-y-4 justify-between">
+                        
+                        {cats.map(cat =>
+                            <Link to={`/?cat=${cat.name}`} key={cat._id}>
+                                <li className="w-1/2 text-center" key={cat._id}>{cat.name}</li>
+                            </Link>
+                        )}
+                        
                     </ul>
                 </div>
                 <div className="border-y-2 py-2 flex justify-center my-4 font-medium text-gray-900">

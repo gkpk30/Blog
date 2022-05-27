@@ -20,6 +20,7 @@ module.exports = {
         'third' : '#3f4347',
         'text': '#7A7A7A',
         'textPrimary': '#444444',
+        'textGold': '#b39656'
       },
       backgroundImage: {
         'login-BgImage': "url('/assets/images/ecological-hair-care-min.jpeg')",

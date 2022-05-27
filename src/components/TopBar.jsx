@@ -4,6 +4,8 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { PlusSmIcon } from '@heroicons/react/solid'
+import {useContext} from 'react'
+import {Context} from '../context/Context'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -12,7 +14,12 @@ function classNames(...classes) {
 console.log(classNames())
 
 export default function TopBar() {
-  const user =  true
+  const {user, dispatch} = useContext(Context)
+  const PF = "http://localhost:5000/images/"
+  
+  const handleLogout = ()=>{
+    dispatch({type: "LOGOUT"})
+  }
 
   return (
     <Disclosure as="nav" className="bg-background-beige shadow font-primary topBar">
@@ -76,10 +83,11 @@ export default function TopBar() {
                   }
                   {user &&
                     <Link
-                      to="/logout"
+                      to="/"
                       className="border-transparent active:border-secondary  text-text  hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                      onClick={handleLogout}
                     >
-                      LOGOUT
+                      {user && "LOGOUT"}
                     </Link>
                   }
                 </div>
@@ -94,7 +102,9 @@ export default function TopBar() {
                           className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-secondary shadow-sm hover:bg-third focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                           {/* <PlusSmIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" /> */}
-                          <span>SIGN IN</span>
+                          <Link to="/login">
+                            <span>SIGN IN</span>
+                          </Link>
                         </button>
                       
                     </div>
@@ -112,11 +122,11 @@ export default function TopBar() {
                       {/* Profile dropdown */}
                       <Menu as="div" className="ml-3 relative">
                         <div>
-                          <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                          <Menu.Button className="bg-white bg-cover rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             <span className="sr-only">Open user menu</span>
                             <img
-                              className="h-8 w-8 rounded-full"
-                              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                              className="h-8 w-8 rounded-full object-cover"
+                              src={PF+user.profilePicture}
                               alt=""
                             />
                           </Menu.Button>
@@ -160,7 +170,8 @@ export default function TopBar() {
                             <Menu.Item>
                               {({ active }) => (
                                 <Link
-                                  href="/signout"
+                                  to="/"
+                                  onClick={handleLogout}
                                   className={classNames(
                                     active ? 'bg-gray-100' : '',
                                     'block px-4 py-2 text-sm text-gray-700'
